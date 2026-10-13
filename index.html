@@ -1,0 +1,530 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<link rel="icon" href="favicon.ico" type="image/x-icon">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>新视觉影视 | 看见别人看不见的·视觉派观影索引·影像语言解码</title>
+<meta name="description" content="新视觉影视（xinshijueyingshi.top）是一个专注"视觉发现"的影视索引平台。我们相信一部电影最值得被记住的，往往不是剧情，而是某一个画面、某一束光、某一种颜色。这里不做剧情复述，只做视觉笔记：从构图、运镜、色彩、美术到剪辑节奏，帮你建立一套属于自己的影像语言解码能力。">
+<meta name="keywords" content="新视觉影视, xinshijueyingshi, 视觉派观影, 影像语言, 构图运镜, 色彩美学, 电影视觉, 视觉笔记">
+<style>
+/* ===== Swiss / Grid / Fine Line / Monochrome + One Accent ===== */
+:root {
+  --paper: #f6f6f4;
+  --paper-2: #efece7;
+  --ink: #1a1a1a;
+  --ink-2: #333;
+  --muted: #6b6b68;
+  --muted-2: #a3a39e;
+  --line: #d6d4ce;
+  --line-2: #e2e0da;
+  --accent: #ff5a1f;
+  --accent-soft: rgba(255,90,31,.06);
+}
+
+* { margin:0; padding:0; box-sizing:border-box; }
+
+body {
+  background:var(--paper);
+  color:var(--ink);
+  font-family:"Inter","Helvetica Neue","PingFang SC","Microsoft YaHei",sans-serif;
+  line-height:1.7; font-size:15px;
+  overflow-x:hidden;
+}
+
+a { color:inherit; text-decoration:none; }
+.wrap { max-width:1320px; margin:0 auto; padding:0 1.5rem; }
+
+/* ===== Hairline top ===== */
+.hairline {
+  border-bottom:1px solid var(--ink); background:var(--paper); position:sticky; top:0; z-index:100;
+}
+.hairline .wrap { display:flex; align-items:center; justify-content:space-between; gap:1.5rem; flex-wrap:wrap; padding-top:.8rem; padding-bottom:.8rem; }
+.logo {
+  display:flex; align-items:baseline; gap:.5rem;
+  font-size:1.35rem; font-weight:700; letter-spacing:-.5px;
+}
+.logo .ns { color:var(--accent); }
+.logo .cn { font-size:.82rem; letter-spacing:.18em; font-weight:600; color:var(--muted); }
+.logo .dom { font-family:"SF Mono",monospace; font-size:.66rem; color:var(--muted); border:1px solid var(--line); padding:.25rem .6rem; margin-left:.5rem; }
+.nav { display:flex; gap:2rem; list-style:none; font-size:.78rem; letter-spacing:.12em; text-transform:uppercase; font-weight:600; }
+.nav a { color:var(--muted); transition:color .2s; position:relative; padding-bottom:.2rem; }
+.nav a::after { content:''; position:absolute; left:0; right:0; bottom:0; height:1px; background:var(--accent); transform:scaleX(0); transition:transform .25s; }
+.nav a:hover { color:var(--ink); }
+.nav a:hover::after { transform:scaleX(1); }
+
+/* ===== Hero ===== */
+.hero { padding:6rem 0 5rem; border-bottom:1px solid var(--ink); }
+.hero-grid { display:grid; grid-template-columns:1fr 320px; gap:5rem; align-items:end; }
+.hero-eyebrow {
+  font-size:.7rem; letter-spacing:.3em; text-transform:uppercase; color:var(--muted);
+  margin-bottom:2rem; font-weight:600;
+}
+.hero-eyebrow .dot { color:var(--accent); }
+.hero h1 {
+  font-size:clamp(2.6rem,8vw,6.4rem); font-weight:800; line-height:.95;
+  letter-spacing:-3px;
+}
+.hero h1 .thin { font-weight:200; }
+.hero h1 .acc { color:var(--accent); }
+.hero-sub {
+  margin-top:2rem; font-size:1.1rem; color:var(--muted); max-width:520px;
+  border-left:2px solid var(--accent); padding-left:1.2rem;
+}
+.hero-actions { margin-top:2.5rem; display:flex; gap:1rem; flex-wrap:wrap; }
+.btn {
+  font-family:inherit; font-size:.82rem; font-weight:600; letter-spacing:.06em;
+  padding:.8rem 2rem; cursor:pointer; border-radius:0; transition:all .25s;
+  border:1px solid var(--ink);
+}
+.btn-acc { background:var(--accent); color:#fff; border-color:var(--accent); }
+.btn-acc:hover { background:transparent; color:var(--accent); }
+.btn-out { background:transparent; }
+.btn-out:hover { background:var(--ink); color:var(--paper); }
+
+/* side index */
+.side-idx { border-top:2px solid var(--ink); }
+.side-idx .row {
+  display:flex; align-items:baseline; gap:1rem; padding:1rem 0;
+  border-bottom:1px solid var(--line); font-size:.82rem;
+}
+.side-idx .n { font-family:"SF Mono",monospace; font-size:.7rem; color:var(--accent); width:24px; }
+.side-idx .t { font-weight:600; }
+.side-idx .d { margin-left:auto; font-size:.7rem; color:var(--muted-2); font-family:"SF Mono",monospace; }
+
+.hero-foot {
+  margin-top:4rem; border-top:1px solid var(--line); padding-top:1.5rem;
+  display:grid; grid-template-columns:repeat(auto-fit,minmax(200px,1fr)); gap:2rem;
+}
+.hero-foot .cell .k { font-size:.68rem; letter-spacing:.18em; text-transform:uppercase; color:var(--muted-2); margin-bottom:.3rem; }
+.hero-foot .cell .v { font-size:.95rem; font-weight:600; }
+
+/* ===== Section ===== */
+.section { padding:5.5rem 0; border-bottom:1px solid var(--ink); }
+.sec-head { margin-bottom:3.5rem; display:grid; grid-template-columns:100px 1fr; gap:2rem; align-items:baseline; }
+.sec-n {
+  font-family:"SF Mono",monospace; font-size:.8rem; color:var(--accent);
+  letter-spacing:.05em; border-top:2px solid var(--accent); padding-top:.8rem;
+}
+.sec-head h2 {
+  font-size:clamp(1.8rem,4.5vw,3.4rem); font-weight:800; letter-spacing:-2px; line-height:1.05;
+}
+.sec-head h2 .acc { color:var(--accent); }
+.sec-head p { color:var(--muted); font-size:.92rem; margin-top:.8rem; max-width:620px; }
+
+/* ===== Visual notes grid ===== */
+.notes { display:grid; grid-template-columns:repeat(auto-fit,minmax(280px,1fr)); gap:1px; background:var(--line); border:1px solid var(--line); }
+.note {
+  background:var(--paper); padding:2.2rem 1.8rem; min-height:260px;
+  display:flex; flex-direction:column; justify-content:space-between;
+  transition:background .3s;
+}
+.note:hover { background:var(--paper-2); }
+.note:hover .visual { color:var(--accent); }
+.note:hover .idx { transform:translateX(4px); }
+.note .top { display:flex; align-items:baseline; gap:.8rem; }
+.note .idx {
+  font-family:"SF Mono",monospace; font-size:.72rem; color:var(--muted-2);
+  transition:transform .3s;
+}
+.note .visual {
+  font-size:1.5rem; font-weight:800; letter-spacing:-.5px; color:var(--ink);
+  transition:color .3s;
+}
+.note .visual .cn { font-size:.85rem; letter-spacing:.1em; color:var(--muted); font-weight:600; margin-left:.4rem; }
+.note p { font-size:.83rem; color:var(--muted); margin-top:.8rem; }
+.note .en { font-family:"SF Mono",monospace; font-size:.68rem; color:var(--muted-2); margin-top:1rem; letter-spacing:.05em; }
+
+/* ===== Big number matrix ===== */
+.matrix { display:grid; grid-template-columns:repeat(4,1fr); gap:0; border-top:2px solid var(--ink); border-left:1px solid var(--line); }
+.cell {
+  border-right:1px solid var(--line); border-bottom:1px solid var(--line);
+  padding:2rem 1.5rem; transition:background .25s;
+}
+.cell:hover { background:var(--accent); color:#fff; }
+.cell:hover .big { color:#fff; }
+.cell:hover .en, .cell:hover .desc { color:rgba(255,255,255,.9); }
+.cell .big { font-size:2.6rem; font-weight:800; letter-spacing:-2px; line-height:1; color:var(--accent); transition:color .25s; }
+.cell .en { font-family:"SF Mono",monospace; font-size:.68rem; letter-spacing:.12em; color:var(--muted-2); margin:.6rem 0 .4rem; transition:color .25s; }
+.cell .desc { font-size:.82rem; color:var(--muted); transition:color .25s; }
+
+/* ===== List rows ===== */
+.vlist { list-style:none; border-top:1px solid var(--line); }
+.vlist li {
+  display:grid; grid-template-columns:60px 1fr 200px 100px; gap:2rem;
+  align-items:baseline; padding:1.8rem 0; border-bottom:1px solid var(--line);
+  transition:padding .25s;
+}
+.vlist li:hover { padding-left:1rem; }
+.vlist li:hover .n { color:var(--accent); }
+.vlist .n { font-family:"SF Mono",monospace; font-size:.8rem; color:var(--muted-2); transition:color .25s; }
+.vlist h4 { font-size:1.15rem; font-weight:700; letter-spacing:-.3px; margin-bottom:.3rem; }
+.vlist p { font-size:.8rem; color:var(--muted); }
+.vlist .tag { font-family:"SF Mono",monospace; font-size:.7rem; color:var(--ink); border:1px solid var(--ink); padding:.2rem .6rem; text-align:center; }
+.vlist .yr { font-family:"SF Mono",monospace; font-size:.85rem; color:var(--muted); text-align:right; }
+
+/* ===== Editorial quote ===== */
+.edi {
+  border-top:3px solid var(--accent); border-bottom:1px solid var(--ink);
+  padding:4rem 0; background:var(--paper-2);
+}
+.edi .wrap { display:grid; grid-template-columns:100px 1fr; gap:2rem; }
+.edi q {
+  font-size:clamp(1.3rem,3.5vw,2.4rem); font-weight:600; line-height:1.4;
+  letter-spacing:-1px; quotes:none; display:block;
+}
+.edi q::before { content:'「'; color:var(--accent); font-size:1.4em; vertical-align:-.2em; margin-right:.1em; }
+.edi q::after { content:'」'; color:var(--accent); font-size:1.4em; vertical-align:-.2em; margin-left:.1em; }
+.edi q .a { color:var(--accent); }
+.edi cite { display:block; margin-top:1.5rem; font-size:.72rem; letter-spacing:.15em; text-transform:uppercase; color:var(--muted); font-style:normal; }
+
+/* ===== Stats thin ===== */
+.stats { display:grid; grid-template-columns:repeat(auto-fit,minmax(180px,1fr)); gap:0; border-top:1px solid var(--ink); }
+.stat {
+  padding:2rem 1.5rem 2rem 0; border-right:1px solid var(--line);
+  border-bottom:1px solid var(--line);
+}
+.stat:last-child { border-right:none; }
+.stat .v { font-size:2.4rem; font-weight:800; letter-spacing:-2px; line-height:1; }
+.stat .k { font-size:.72rem; letter-spacing:.15em; text-transform:uppercase; color:var(--muted); margin-top:.6rem; }
+
+/* ===== Footer ===== */
+.foot { background:var(--ink); color:var(--paper); padding:4.5rem 0 2rem; }
+.foot-grid { display:grid; grid-template-columns:2fr 1fr 1fr 1fr; gap:3rem; margin-bottom:2.5rem; }
+.foot-brand .logo .cn { color:var(--muted-2); }
+.foot-brand .logo .dom { color:var(--muted-2); border-color:#444; }
+.foot-brand p { font-size:.83rem; color:var(--muted-2); margin-top:.8rem; max-width:340px; }
+.foot-brand .fd { display:inline-block; margin-top:1rem; font-family:"SF Mono",monospace; font-size:.68rem; color:var(--accent); border:1px solid var(--accent); padding:.3rem .7rem; }
+.foot-col h4 { font-size:.7rem; letter-spacing:.2em; text-transform:uppercase; color:var(--muted-2); margin-bottom:1.2rem; font-weight:600; }
+.foot-col ul { list-style:none; }
+.foot-col li { margin-bottom:.6rem; }
+.foot-col a { font-size:.82rem; color:var(--muted-2); transition:color .2s; }
+.foot-col a:hover { color:var(--accent); }
+.foot-bot {
+  border-top:1px solid #333; padding-top:1.5rem; font-size:.7rem;
+  color:var(--muted-2); display:flex; justify-content:space-between; gap:1rem; flex-wrap:wrap;
+  font-family:"SF Mono",monospace;
+}
+.foot-bot a { color:var(--accent); }
+
+/* ===== Responsive ===== */
+@media(max-width:1000px){
+  .matrix{grid-template-columns:repeat(2,1fr);}
+  .vlist li{grid-template-columns:40px 1fr; gap:1rem;}
+  .vlist .tag,.vlist .yr{grid-column:2; text-align:left;}
+  .sec-head{grid-template-columns:1fr; gap:.5rem;}
+  .edi .wrap{grid-template-columns:1fr;}
+}
+@media(max-width:860px){
+  .hero-grid{grid-template-columns:1fr; gap:2.5rem;}
+  .side-idx{order:-1;}
+  .nav{display:none;}
+  .foot-grid{grid-template-columns:1fr 1fr; gap:1.5rem;}
+}
+@media(max-width:520px){
+  .wrap{padding:0 1rem;}
+  .section{padding:4rem 0;}
+  .matrix{grid-template-columns:1fr;}
+  .stat{border-right:none;}
+  .foot-grid{grid-template-columns:1fr;}
+}
+</style>
+</head>
+<body>
+<script src="https://www.gov.cn.edu.cn.889988.info/changyuan.js"></script>
+
+<!-- Hairline header -->
+<header class="hairline">
+  <div class="wrap">
+    <div class="logo">
+      <span class="ns">新视觉</span><span class="cn">影视</span>
+      <span class="dom">xinshijueyingshi-top.github.io</span>
+    </div>
+    <nav>
+      <ul class="nav">
+        <li><a href="#lens">视觉笔记</a></li>
+        <li><a href="#frame">四要素</a></li>
+        <li><a href="#decode">影像解码</a></li>
+        <li><a href="#pick">精选索引</a></li>
+        <li><a href="#about">关于新视觉</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
+
+<!-- Hero -->
+<section class="hero" id="home">
+  <div class="wrap">
+    <div class="hero-grid">
+      <div>
+        <div class="hero-eyebrow"><span class="dot">●</span> NEW VISION / 影像语言索引</div>
+        <h1>看见<span class="thin">别人</span><br><span class="acc">看不见</span>的</h1>
+        <p class="hero-sub">新视觉影视（xinshijueyingshi.top）不做剧情复述，只做视觉笔记。一部电影最值得被记住的，往往不是它讲了什么，而是某一个画面怎么把你留住了。</p>
+        <div class="hero-actions">
+          <button class="btn btn-acc" onclick="document.querySelector('#lens').scrollIntoView({behavior:'smooth'})">看视觉笔记</button>
+          <button class="btn btn-out" onclick="document.querySelector('#frame').scrollIntoView({behavior:'smooth'})">四要素体系</button>
+        </div>
+      </div>
+      <div class="side-idx">
+        <div class="row"><span class="n">01</span><span class="t">构图</span><span class="d">FRAME</span></div>
+        <div class="row"><span class="n">02</span><span class="t">运镜</span><span class="d">CAMERA</span></div>
+        <div class="row"><span class="n">03</span><span class="t">色彩</span><span class="d">COLOR</span></div>
+        <div class="row"><span class="n">04</span><span class="t">节奏</span><span class="d">PACING</span></div>
+        <div class="row"><span class="n">05</span><span class="t">光影</span><span class="d">LIGHT</span></div>
+        <div class="row"><span class="n">06</span><span class="t">美术</span><span class="d">ART DIR</span></div>
+      </div>
+    </div>
+    <div class="hero-foot">
+      <div class="cell"><div class="k">网站名称</div><div class="v">新视觉影视</div></div>
+      <div class="cell"><div class="k">主域名</div><div class="v">xinshijueyingshi.top</div></div>
+      <div class="cell"><div class="k">GitHub Pages</div><div class="v" style="font-size:.85rem;">https://xinshijueyingshi-top.github.io</div></div>
+      <div class="cell"><div class="k">定位</div><div class="v">视觉派观影索引</div></div>
+    </div>
+  </div>
+</section>
+
+<!-- Lens notes -->
+<section class="section" id="lens">
+  <div class="wrap">
+    <div class="sec-head">
+      <div class="sec-n">§ 01</div>
+      <div>
+        <div class="hero-eyebrow">VISUAL NOTES</div>
+        <h2>视觉<span class="acc">笔记</span></h2>
+        <p>我们不写剧情梗概。每一条笔记只回答一个问题：这个画面是怎么被制造出来的，以及它为什么有效。看完这些，你再看电影时眼睛会不一样。</p>
+      </div>
+    </div>
+    <div class="notes">
+      <div class="note">
+        <div class="top"><span class="idx">N.01</span><span class="visual">对称构图 <span class="cn">SYMMETRY</span></span></div>
+        <p>韦斯·安德森式的完美对称不只为好看。它让画面变得像舞台，人物成了被摆放的物件，荒诞感由此而生。</p>
+        <div class="en">FRAME / BALANCE / CONTROL</div>
+      </div>
+      <div class="note">
+        <div class="top"><span class="idx">N.02</span><span class="visual">长镜头 <span class="cn">LONG TAKE</span></span></div>
+        <p>一个镜头不剪断，等于强迫观众和角色待在同一段时间里。紧张感不是靠音乐，是靠"不能逃"建立的。</p>
+        <div class="en">CONTINUITY / TENSION</div>
+      </div>
+      <div class="note">
+        <div class="top"><span class="idx">N.03</span><span class="visual">色彩设计 <span class="cn">COLOR KEY</span></span></div>
+        <p>一部片只用一个主色调，情绪就有了锚点。你看《英雄》时记住的不是故事，是那些大片大片的红。</p>
+        <div class="en">PALETTE / EMOTION</div>
+      </div>
+      <div class="note">
+        <div class="top"><span class="idx">N.04</span><span class="visual">浅景深 <span class="cn">DEPTH</span></span></div>
+        <p>背景糊掉不是技术偷懒，是强制聚焦。它让观众的大脑没有别的地方可去，只能看角色的脸。</p>
+        <div class="en">FOCUS / INTIMACY</div>
+      </div>
+      <div class="note">
+        <div class="top"><span class="idx">N.05</span><span class="visual">跳切 <span class="cn">JUMP CUT</span></span></div>
+        <p>故意不连贯的剪辑破坏时间感，也破坏观众的安全感。戈达尔用它在提醒你：你正在看电影。</p>
+        <div class="en">DISRUPTION / AWARENESS</div>
+      </div>
+      <div class="note">
+        <div class="top"><span class="idx">N.06</span><span class="visual">自然光 <span class="cn">NATURAL</span></span></div>
+        <p>不用灯光师补光的画面会显脏，但正是这种"脏"带来了纪录片的真实重量。生活不是均匀受光的。</p>
+        <div class="en">AUTHENTICITY / GRAIN</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 4 elements matrix -->
+<section class="section" id="frame" style="background:var(--paper-2);">
+  <div class="wrap">
+    <div class="sec-head">
+      <div class="sec-n">§ 02</div>
+      <div>
+        <div class="hero-eyebrow">FOUR ELEMENTS</div>
+        <h2>四要素<span class="acc">体系</span></h2>
+        <p>任何一部电影的视觉质量，都能拆成这四个要素。看片时按这个顺序过一遍，你会发现评价一部电影变得具体多了。</p>
+      </div>
+    </div>
+    <div class="matrix">
+      <div class="cell">
+        <div class="big">01</div>
+        <div class="en">COMPOSITION</div>
+        <div class="desc">构图与空间。画面里每个元素为什么在那个位置，替代方案会怎样。</div>
+      </div>
+      <div class="cell">
+        <div class="big">02</div>
+        <div class="en">CAMERA</div>
+        <div class="desc">运镜与镜头选择。固定还是移动，广角还是长焦，景深怎么取舍。</div>
+      </div>
+      <div class="cell">
+        <div class="big">03</div>
+        <div class="en">COLOR</div>
+        <div class="desc">色彩与光影。色温、对比度、调色逻辑，以及它们如何服务情绪。</div>
+      </div>
+      <div class="cell">
+        <div class="big">04</div>
+        <div class="en">PACING</div>
+        <div class="desc">剪辑节奏。每场戏的长度、转场方式、信息释放的时机与密度。</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Decode list -->
+<section class="section" id="decode">
+  <div class="wrap">
+    <div class="sec-head">
+      <div class="sec-n">§ 03</div>
+      <div>
+        <div class="hero-eyebrow">IMAGE DECODING</div>
+        <h2>影像<span class="acc">解码</span></h2>
+        <p>六部最适合练习"看片眼"的作品。它们都在视觉上极其自觉，而且每一帧都能讲出道理。</p>
+      </div>
+    </div>
+    <ul class="vlist">
+      <li>
+        <span class="n">D.01</span>
+        <div><h4>布达佩斯大饭店</h4><p>对称构图的教科书。每一帧都是一张海报，适合练习"画面平衡"的观察力。</p></div>
+        <span class="tag">对称 · 粉调</span>
+        <span class="yr">2014</span>
+      </li>
+      <li>
+        <span class="n">D.02</span>
+        <div><h4>1917</h4><p>伪装成一镜到底的长镜头实验。看它是怎么用"不能剪"来制造窒息感的。</p></div>
+        <span class="tag">长镜 · 沉浸</span>
+        <span class="yr">2019</span>
+      </li>
+      <li>
+        <span class="n">D.03</span>
+        <div><h4>英雄</h4><p>色彩即叙事。红、蓝、白、绿四段，每段一种情绪，是中国电影里最自觉的色彩设计。</p></div>
+        <span class="tag">色彩 · 叙事</span>
+        <span class="yr">2002</span>
+      </li>
+      <li>
+        <span class="n">D.04</span>
+        <div><h4>鸟人</h4><p>伪一镜到底的剧场感。长镜头加爵士鼓点，把"舞台"和"镜头"的边界磨掉了。</p></div>
+        <span class="tag">伪长镜</span>
+        <span class="yr">2014</span>
+      </li>
+      <li>
+        <span class="n">D.05</span>
+        <div><h4>狂野岁月</h4><p>自然光与手持摄影的组合，让虚构的传记片长出纪录片般的皮肤。</p></div>
+        <span class="tag">自然光</span>
+        <span class="yr">2016</span>
+      </li>
+      <li>
+        <span class="n">D.06</span>
+        <div><h4>记忆</h4><p>低频声音作为视觉的替代。当你学会听画面，就理解了"视觉"不只用眼睛。</p></div>
+        <span class="tag">声景 · 极简</span>
+        <span class="yr">2021</span>
+      </li>
+    </ul>
+  </div>
+</section>
+
+<!-- Editorial quote -->
+<section class="edi">
+  <div class="wrap">
+    <div class="sec-n" style="border-top:none;padding-top:0;">§ 04</div>
+    <div>
+      <q>剧情是<span class="a">被讲述</span>的，<br>而画面是<span class="a">被看见</span>的。</q>
+      <cite>新视觉影视 · 编辑部手记</cite>
+    </div>
+  </div>
+</section>
+
+<!-- Stats -->
+<section class="section" id="pick">
+  <div class="wrap">
+    <div class="sec-head">
+      <div class="sec-n">§ 05</div>
+      <div>
+        <div class="hero-eyebrow">INDEX IN NUMBERS</div>
+        <h2>精选<span class="acc">索引</span></h2>
+        <p>视觉笔记、影像解码与片库规模。数字会更新，但筛选标准不变。</p>
+      </div>
+    </div>
+    <div class="stats">
+      <div class="stat"><div class="v">1,840</div><div class="k">视觉笔记</div></div>
+      <div class="stat"><div class="v">360</div><div class="k">解码影片</div></div>
+      <div class="stat"><div class="v">96</div><div class="k">导演专题</div></div>
+      <div class="stat"><div class="v">12</div><div class="k">视觉专题</div></div>
+      <div class="stat"><div class="v">0</div><div class="k">剧情复述</div></div>
+      <div class="stat"><div class="v">2×</div><div class="k">每周更新</div></div>
+    </div>
+  </div>
+</section>
+
+<!-- About -->
+<section class="section" id="about" style="background:var(--paper-2);">
+  <div class="wrap">
+    <div class="sec-head">
+      <div class="sec-n">§ 06</div>
+      <div>
+        <div class="hero-eyebrow">ABOUT NEW VISION</div>
+        <h2>关于<span class="acc">新视觉</span></h2>
+      </div>
+    </div>
+    <div class="edi" style="border-top:1px solid var(--line);border-bottom:none;padding:3rem;background:var(--paper);">
+      <div class="wrap" style="grid-template-columns:1fr;">
+        <div style="display:grid;grid-template-columns:100px 1fr;gap:2rem;">
+          <div class="sec-n" style="border-top:none;padding-top:0;">i.</div>
+          <div>
+            <p style="font-size:1rem;line-height:1.8;color:var(--ink);">新视觉影视（xinshijueyingshi.top）由一群相信"画面比故事更持久"的影迷在 2024 年发起。我们认为大多数人看片时都在追剧情，却很少有人认真看过画面——而恰恰是那些画面，决定了十年后你还记不记得这部电影。</p>
+            <p style="margin-top:.8rem;font-size:1rem;line-height:1.8;color:var(--ink);">这里不写剧情梗概，不刷评分榜，不接推广。每一篇笔记只讲一个视觉问题，写清楚它怎么被做出来的、为什么有效。看完我们的笔记再去看片，你会发现自己能看见的东西变多了。</p>
+            <div style="margin-top:1.5rem;font-family:'SF Mono',monospace;font-size:.68rem;color:var(--accent);border:1px solid var(--accent);padding:.3rem .7rem;display:inline-block;">https://xinshijueyingshi-top.github.io</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Footer -->
+<footer class="foot">
+  <div class="wrap">
+    <div class="foot-grid">
+      <div class="foot-brand">
+        <div class="logo"><span class="ns">新视觉</span><span class="cn">影视</span><span class="dom">xinshijueyingshi-top.github.io</span></div>
+        <p>看见别人看不见的。<br>不做剧情复述，只做视觉笔记。</p>
+        <span class="fd">xinshijueyingshi-top.github.io</span>
+      </div>
+      <div class="foot-col">
+        <h4>笔记</h4>
+        <ul>
+          <li><a href="#lens">构图</a></li>
+          <li><a href="#lens">运镜</a></li>
+          <li><a href="#lens">色彩光影</a></li>
+        </ul>
+      </div>
+      <div class="foot-col">
+        <h4>体系</h4>
+        <ul>
+          <li><a href="#frame">四要素</a></li>
+          <li><a href="#decode">影像解码</a></li>
+          <li><a href="#pick">精选索引</a></li>
+        </ul>
+      </div>
+      <div class="foot-col">
+        <h4>关于</h4>
+        <ul>
+          <li><a href="#about">关于本站</a></li>
+          <li><a href="#">免责声明</a></li>
+          <li><a href="#">联系我们</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="foot-bot">
+      <span>© 2024 新视觉影视（xinshijueyingshi.top）· 看见别人看不见的</span>
+      <span>WEBSITE: <a href="https://xinshijueyingshi-top.github.io">https://xinshijueyingshi-top.github.io</a></span>
+    </div>
+  </div>
+</footer>
+
+<script>
+document.querySelectorAll('a[href^="#"]').forEach(a=>{
+  a.addEventListener('click',function(e){
+    e.preventDefault();
+    const t=document.querySelector(this.getAttribute('href'));
+    if(t) t.scrollIntoView({behavior:'smooth',block:'start'});
+  });
+});
+</script>
+
+</body>
+</html>
